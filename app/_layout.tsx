@@ -11,6 +11,8 @@ import "react-native-reanimated";
 import { useColorScheme } from "@/presentation/hooks/useColorScheme";
 import PermisionsCheckerProvider from "@/presentation/providers/PermisionsCheckerProvider";
 
+import "../global.css"
+
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
