@@ -1,33 +1,33 @@
-// import { checkLocationPermission } from '@/core/permissions/location';
-import { create } from 'zustand';
-import { PermissionStatus } from '../../infrastructure/interfaces/location';
-import { checkLocationPermission, requestLocationPermission } from '@/core/permissions/location';
+import {create} from 'zustand';
+import { PermissionStatus } from '@/infraestructure/interfaces/location';
+import { checkLocationPermission, requestLocationPermission } from '@/core/actions/permissions/location';
+//import { requestLocationPermission, checkLocationPermission } from '../../core/actions/permissions/location';
 
 
 
-interface PermissionState{
+
+interface PermissionState { 
+
     locationStatus: PermissionStatus;
 
     requestLocationPermission: () => Promise<PermissionStatus>;
     checkLocationPermission: () => Promise<PermissionStatus>;
+
 }
 
 export const usePermissionsStore = create<PermissionState>()( (set) => ({
-
-    locationStatus: PermissionStatus.CHECKING,
+    
+    locationStatus: PermissionStatus.CHEKING,
 
     requestLocationPermission: async() => {
         const status = await requestLocationPermission();
-
-        set({locationStatus: status})
-
+        set({ locationStatus: status });
         return status;
     },
+
     checkLocationPermission: async() => {
         const status = await checkLocationPermission();
-
-        set({locationStatus: status})
-
+        set({ locationStatus: status });
         return status;
     },
 

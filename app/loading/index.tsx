@@ -1,5 +1,4 @@
 import { View, Text } from 'react-native'
-import React from 'react'
 
 const LoadingScreen = () => {
   return (
@@ -9,4 +8,4 @@ const LoadingScreen = () => {
   )
 }
 
-export default LoadingScreen
+export default LoadingScreen;

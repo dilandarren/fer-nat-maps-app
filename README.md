@@ -1,8 +1,9 @@
 # Install
 
-```sh
+```sh 
 
 npx create-expo-app@latest
+npx create-expo-app@latest name_project
 
 ```
 
@@ -19,26 +20,30 @@ npm install
 
 npx expo start
 
-npx expo start -c // el flag "-c" Limpiar la cache
+npx expo start -c  // el flag "-c" Limpiar la cache
 
 ```
 
-## Comands:
+
+## Commands:
 
 
 
 ```sh
 
 # Version Dark:
+cmd + shift + a
 
 
-## La mayoria de los casos:
+# La mayoria de los casos: 
 
 - rafnat
 
 - rnfe
 
-## Despues de instalar eliminar capeta: (tabs) y +not-found.tsx
+
+# Despues de instalar eliminar capeta: (tabs) y +not-found.tsx
+
 
 ```
 
@@ -66,12 +71,10 @@ Guide: https://www.nativewind.dev/docs/getting-started/installation
 ```sh
 
 npx expo install nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0
-
-
 npx expo install --dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11
 
 
-# Luego ejecutar:
+# Luego ejecutar: 
 
 npx tailwindcss init
 
@@ -80,17 +83,16 @@ npx tailwindcss init
 module.exports = {
   // NOTE: Update this to include the paths to all files that contain Nativewind classes.
   content: [
-    "./app/**/*.{js,jsx,ts,tsx}",
-    "./components/**/*.{js,jsx,ts,tsx}",
-    "./presentation/**/*.{js,jsx,ts,tsx}",
-  ],
+      "./app/**/*.{js,jsx,ts,tsx}",
+      "./components/**/*.{js,jsx,ts,tsx}",
+      "./presentation/**/*.{js,jsx,ts,tsx}",
+   ],
   presets: [require("nativewind/preset")],
   theme: {
     extend: {},
   },
   plugins: [],
-};
-
+}
 <--->
 
 
@@ -118,25 +120,26 @@ module.exports = function (api) {
     ],
   };
 };
-
 <--->
 
 
-# Luego crear el archivo: metro.config.js
-# IMPORTANTE: apuntar a la carpeta app ya que el fichero global.css
-# esta dentro de "app"
-# ... { input: './global.css' })
+# Luego crear el archivo:  metro.config.js
+# IMPORTANTE: apuntar a la carpeta app ya que el fichero global.css esta dentro de "app"
+# ... { input: './global.css' }) 
 
 <--->
 const { getDefaultConfig } = require("expo/metro-config");
 const { withNativeWind } = require('nativewind/metro');
+ 
 const config = getDefaultConfig(__dirname)
+ 
 module.exports = withNativeWind(config, { input: './global.css' })
 <--->
 
-# Luego en copiar el import solamente en el archivo app/_layout.tsx
+# Luego en copiar el import solamente en el archivo  app/_layout.tsx
 
 import "../global.css"
+ 
 
 
 # Luego crear un archivo en el principal: nativewind-env.d.ts y copiar:
@@ -152,11 +155,11 @@ import "../global.css"
 
 ## Expo bar
 
-```sh
+```sh 
 
 # Bar que se ve en la parte de abajo del android (solo para android)
-# Referencia: https://docs.expo.dev/versions/latest/sdk/navigation-bar/
-npx expo install expo-navigation-bar
+# Referencia: https://docs.expo.dev/versions/latest/sdk/navigation-bar/ 
+npx expo install expo-navigation-bar 
 
 
 # Haptics : cuando se pulsa en los Pressables se mueva el movil
@@ -172,8 +175,7 @@ referencia: https://docs.expo.dev/router/advanced/drawer/
 ```sh
 
 
-npx expo install @react-navigation/drawer react-native-gesture-handler
-react-native-reanimated
+npx expo install @react-navigation/drawer react-native-gesture-handler react-native-reanimated
 
 ```
 
@@ -183,7 +185,7 @@ react-native-reanimated
 
 Intalación de axios
 
-```sh
+```sh 
 
 npm install axios
 
@@ -195,7 +197,7 @@ npm install axios
 
 ref: https://tanstack.com/query/latest/docs/framework/react/installation
 
-```sh
+```sh 
 
 npm i @tanstack/react-query
 
@@ -208,7 +210,7 @@ npm i @tanstack/react-query
 
 ref: https://www.npmjs.com/package/react-native-reanimated-carousel
 
-```sh
+```sh 
 
 npx expo install react-native-reanimated-carousel
 
@@ -221,25 +223,46 @@ npx expo install react-native-reanimated-carousel
 
 ref: https://docs.expo.dev/versions/latest/sdk/linear-gradient/
 
-```sh
+```sh 
 
 npx expo install expo-linear-gradient
 
 ```
 
+
+
 ## Async Storage
 
 ref: https://docs.expo.dev/develop/user-interface/store-data/
 
-```sh
+```sh 
+
 
 npx expo install @react-native-async-storage/async-storage
+
+```
+
 
 
 ## Expo Location
 
-https://docs.expo.dev/versions/latest/sdk/location/
+ref: [Expo Location](https://docs.expo.dev/versions/latest/sdk/location/)
+
+```sh 
 
 npx expo install expo-location
+
+
+```
+
+
+
+
+## Zustand
+
+
+```sh 
+
+npm install zustand
 
 ```
